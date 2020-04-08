@@ -5,8 +5,8 @@ class Title extends React.Component {
     render() {
         return(
             <div id='title'>
-                <p id='first'>{this.props.title}</p>
-                <p id='second'>{this.props.subtitle}</p>
+                <h1 id='first'>{this.props.title}</h1>
+                <h2 id='second'>{this.props.subtitle}</h2>
             </div>
         );
     };

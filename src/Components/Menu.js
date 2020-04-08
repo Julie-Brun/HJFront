@@ -1,4 +1,10 @@
 import React from 'react';
+
+import Jouer from '../img/Play2.png';
+import Apprendre from '../img/Learn2.png';
+import Trouver from '../img/Search2.png';
+import Contacter from '../img/Contact2.png';
+
 import '../css/Menu.css';
 
 class Menu extends React.Component {
@@ -39,24 +45,33 @@ class Menu extends React.Component {
               transformOrigin: 'top left',
               marginTop: '5px',
             },
-            open: {
-                transform: this.state.toggle ? 'none':'translateX(250px)',
+            openMenu: {
+                border: this.state.toggle ? '2px solid white':'none',
+                borderRadius: this.state.toggle ? '10px':'none'
+            },
+            openNav: {
+                display: this.state.toggle ? 'flex':'none',
             }
         }
 
         return (
-            <div id='menu'>
+            <div id='menu' style={{...styles.openMenu}}>
                 <div id='menuButton' onClick={this.handleClick}>
                     <div style={{...styles.lineTop}}/>
                     <div style={{...styles.lineMiddle}}/>
                     <div style={{...styles.lineBottom}}/>
                 </div>
-                <ul id='nav' style={{...styles.open}} >
-                    <li><a href='#'>Home</a></li>
-                    <li><a href='#'>About me</a></li>
-                    <li><a href='#'>My Works</a></li>
-                    <li><a href='#'>Contact</a></li>
-                </ul>
+                <div id='nav' style={{...styles.openNav}} >
+                    <h3>Menu</h3>
+                    <ul>
+                        <li><a href='#'><img src={Jouer} alt='bouton Jouer'/>Jouer</a></li>
+                        <li><a href='#'><img src={Apprendre} alt='bouton Apprendre'/>Apprendre</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href='#'><img src={Trouver} alt='bouton Trouver'/>Trouver</a></li>
+                        <li><a href='#'><img src={Contacter} alt='bouton Contacter'/>Contacter</a></li>
+                    </ul>
+                </div>
             </div>
         );
     };

@@ -1,8 +1,12 @@
 #menu {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-end;
+    width: 300px;
+    height: 450px;
+    transition: all 0.3s ease;
 }
 
 #menu #menuButton {
@@ -12,6 +16,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    margin: 5%;
     cursor: pointer;
 }
 
@@ -20,7 +25,7 @@
     height: 10px;
     background: #FFFFFF;
     border-radius: 5px;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
 }
 
 #menu #nav {
@@ -28,19 +33,57 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    width: 150px;
-    height: 200px;
-    background: rgba(0, 0, 0, 0.5);
-    border: 2px solid #FFFFFF;
-    list-style: none;
-    text-align: center;
+    width: 300px;
+    height: 450px;
     padding: 0;
-    transition: all 0.2s ease;
+    margin: 0;
+    transition: all 0.3s ease;
 }
 
-#menu #nav li a {
+#menu #nav h3 {
+    position: absolute;
+    top: 0;
+    left: 30%;
+    font-family: 'Fredericka the Great', cursive;
+    font-weight: normal;
+    font-size: 48px;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+#menu #nav ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 300px;
+    height: 110px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+#menu #nav ul li {
+    transition: all 0.3s ease;
+}
+
+#menu #nav ul li a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-decoration: none;
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Amiri', serif;
     color: #FFFFFF;
+    font-size: 24px;
     line-height: 5%;
+    transition: all 0.3s ease;
+}
+
+#menu #nav ul li a img {
+    width: 100px;
+    height: 100px;
+    padding: 10%;
 }

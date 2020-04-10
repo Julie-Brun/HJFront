@@ -1,0 +1,8 @@
+#body {
+    position: fixed;
+    top: 18%;
+    left: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}

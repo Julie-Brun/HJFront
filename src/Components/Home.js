@@ -1,5 +1,8 @@
 import React from 'react';
+
 import Header from './Header';
+import Body from './Body';
+
 import '../css/Header.css'
 
 class Home extends React.Component {
@@ -7,7 +10,7 @@ class Home extends React.Component {
         return(
             <div id='home'>
                 <Header/>
-                <p>Hello, World !</p>
+                <Body/>
             </div>
         );
     };

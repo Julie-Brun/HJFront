@@ -6,14 +6,14 @@
 #title {
     position: relative;
     top: 0;
-    left: 25%;
+    left: 35%;
     font-family: 'Fredericka the Great', cursive;
     color: #ffffff;
     align-self: flex-start;
 }
 
 #title #first {
-    font-size: 96px;
+    font-size: 70px;
     font-weight: normal;
     margin: 0;
 }
@@ -22,7 +22,7 @@
     position: absolute;
     top: 77%;
     left: 45%;
-    font-size: 36px;
+    font-size: 25px;
     font-weight: normal;
     margin: 0;
 }

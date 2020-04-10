@@ -1,0 +1,23 @@
+#menuHome {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#menuHome a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* margin: 10px; */
+    text-decoration: none;
+    font-family: 'Amiri', serif;
+    color: #FFFFFF;
+    font-size: 24px;
+}
+
+#menuHome a img {
+    width: 100px;
+    height: 100px;
+}

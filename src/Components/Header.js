@@ -2,6 +2,8 @@ import React from 'react';
 import Title from './Title';
 import Menu from './Menu';
 
+import '../css/Header.css';
+
 class Header extends React.Component {
     render() {
         return(

@@ -49,6 +49,7 @@ class Menu extends React.Component {
                 border: this.state.toggle ? '2px solid white':'none',
                 borderRadius: this.state.toggle ? '10px':'none',
                 background: this.state.toggle ? '#1D5664':'none',
+                height: this.state.toggle ? '450px': '0px',
             },
             openNav: {
                 display: this.state.toggle ? 'flex':'none',

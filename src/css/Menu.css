@@ -6,7 +6,7 @@
     align-items: flex-end;
     width: 300px;
     height: 450px;
-    transition: all 0.3s ease;
+    /* transition: all 0.3s ease; */
 }
 
 #menu #menuButton {
@@ -75,7 +75,7 @@
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    font-family: 'Amiri', serif;
+    font-family: 'Oswald', serif;
     color: #FFFFFF;
     font-size: 24px;
     line-height: 5%;

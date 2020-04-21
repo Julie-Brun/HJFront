@@ -1,0 +1,11 @@
+#add {
+    position: absolute;
+    z-index: 15;
+    top: 170px;
+    left: 60%;
+}
+
+#add a img {
+    width: 100px;
+    height: 100px;
+}

@@ -1,5 +1,7 @@
-/* #img img {
-    position: absolute;
-    top: 15%;
-    left: 0;
-} */
+#img {
+    width: 70%;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

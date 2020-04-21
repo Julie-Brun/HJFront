@@ -1,16 +1,20 @@
 import React from 'react';
 
 import Header from './Header';
-import Body from './Body';
+import Img from './Img';
+import MenuHome from './MenuHome';
 
-import '../css/Header.css'
+import '../css/PageHome.css';
 
 class Home extends React.Component {
     render() {
         return(
             <div id='home'>
                 <Header/>
-                <Body/>
+                <div id='homeBody'>
+                    <Img/>
+                    <MenuHome/>
+                </div>
             </div>
         );
     };

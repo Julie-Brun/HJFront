@@ -1,0 +1,29 @@
+#list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
+    z-index: 0;
+    top: -50px;
+    left: 115px;
+}
+
+#list h2 {
+    font-family: 'Fredericka the Great', cursive;
+    color: #ffffff;
+    font-size: 48px;
+    font-weight: normal;
+    margin: 0;
+}
+
+#list #listItems {
+    width: 420px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    border: 5px solid white;
+    border-radius: 10px;
+}

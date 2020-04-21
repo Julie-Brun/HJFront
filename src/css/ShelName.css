@@ -1,0 +1,14 @@
+#shelName {
+    position: absolute;
+    top: 26%;
+    left: 33%;
+}
+
+#shelName h2 {
+    font-family: 'Fredericka the Great', cursive;
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: normal;
+    margin: 0;
+    text-align: end;
+}

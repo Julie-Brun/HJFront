@@ -1,0 +1,11 @@
+#hopeG {
+    width: 150px;
+    align-self: flex-end;
+    position: absolute;
+    left: 200px;
+    z-index: 15;
+}
+
+#hopeG img {
+    width: 150px;
+}

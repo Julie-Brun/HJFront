@@ -1,0 +1,54 @@
+#form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#form h2 {
+    font-family: 'Fredericka the Great', cursive;
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: normal;
+    margin: 5px 0;
+}
+
+#form form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#form form label {
+    font-family: 'Oswald', sans-serif;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: normal;
+    margin: 0;
+    align-self: flex-start;
+}
+
+#form form input {
+    width: 420px;
+    height: 25px;
+    background: #1D5664;
+    border: 5px solid white;
+    border-radius: 10px;
+}
+
+#form form button {
+    width: 150px;
+    height: 35px;
+    background: #1D5664;
+    border: 5px solid white;
+    border-radius: 10px;
+    font-family: 'Fredericka the Great', cursive;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: normal;
+    cursor: pointer;   
+    padding: 0;
+    margin: 10px 0;
+    align-self: flex-end;
+}

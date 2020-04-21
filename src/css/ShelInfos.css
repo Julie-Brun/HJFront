@@ -1,0 +1,37 @@
+#shelInfos {
+    width: 555px;
+    height: 475px;
+    background: #1D5664;
+    border: 6px solid white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-self: flex-end;
+    margin: 0 0 20px 0;
+}
+
+#shelInfos #infos {
+    list-style: none;
+    font-family: 'Oswald', serif;
+    color: #FFFFFF;
+    font-size: 16px;
+    padding: 0;
+    margin: 15px 15px 30px 15px;
+}
+
+#shelInfos #infos li span {
+    font-family: 'Fredericka the Great', cursive;
+    color: #FFFFFF;
+    font-size: 18px;
+    padding: 0;
+}
+
+#shelInfos #description {
+    font-family: 'Oswald', serif;
+    color: #FFFFFF;
+    font-size: 16px;
+    margin: 0 15px 15px 15px;
+    text-align: justify;
+}

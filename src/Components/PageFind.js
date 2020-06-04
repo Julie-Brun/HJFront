@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Header from './Header';
-import List from './List';
+import MapList from './MapList';
 import Map from './Map';
 import Add from './Add';
 import Search from './Search';
@@ -16,7 +16,7 @@ class PageFind extends React.Component {
 
                 <Header/>
                 <div id='findBody'>
-                    <List/>
+                    <MapList/>
                     <Map/>
                     <Add/>
                     <Search/>

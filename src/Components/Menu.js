@@ -66,12 +66,12 @@ class Menu extends React.Component {
                 <div id='nav' style={{...styles.openNav}} >
                     <h3>Menu</h3>
                     <ul>
-                        <li><a href='#'><img src={Jouer} alt='bouton Jouer'/>Jouer</a></li>
-                        <li><a href='#'><img src={Apprendre} alt='bouton Apprendre'/>Apprendre</a></li>
+                        <li><a href='/jouer'><img src={Jouer} alt='bouton Jouer'/>Jouer</a></li>
+                        <li><a href='/apprendre'><img src={Apprendre} alt='bouton Apprendre'/>Apprendre</a></li>
                     </ul>
                     <ul>
-                        <li><a href='#'><img src={Trouver} alt='bouton Trouver'/>Trouver</a></li>
-                        <li><a href='#'><img src={Contacter} alt='bouton Contacter'/>Contacter</a></li>
+                        <li><a href='/trouver'><img src={Trouver} alt='bouton Trouver'/>Trouver</a></li>
+                        <li><a href='mailto:hopes.journey.contact@gmail.com'><img src={Contacter} alt='bouton Contacter'/>Contacter</a></li>
                     </ul>
                 </div>
             </div>

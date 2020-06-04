@@ -9,3 +9,23 @@
 #hopeG img {
     width: 150px;
 }
+
+@media screen and (max-width: 768px) {
+    #hopeG {
+        width: 150px;
+        align-self: flex-end;
+        position: absolute;
+        left: 70px;
+        z-index: 15;
+    }
+    
+    #hopeG img {
+        width: 150px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    #hopeG {
+        display: none;
+    }
+}

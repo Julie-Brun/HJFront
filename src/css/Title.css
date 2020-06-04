@@ -26,3 +26,35 @@
     font-weight: normal;
     margin: 0;
 }
+
+@media screen and (max-width: 768px) {
+    #title {
+        left: 0;
+    }
+    
+    #title #first {
+        font-size: 50px;
+    }
+    
+    #title #second {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    #title {
+        left: 0;
+    }
+    
+    #title #first {
+        width: 250px;
+        font-size: 30px;
+    }
+    
+    #title #second {
+        width: 160px;
+        font-size: 16px;
+        top: 90%;
+        left: 40%;
+    }
+}

@@ -1,4 +1,4 @@
-#list {
+#maplist {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -9,7 +9,7 @@
     left: 115px;
 }
 
-#list h2 {
+#maplist h2 {
     font-family: 'Fredericka the Great', cursive;
     color: #ffffff;
     font-size: 48px;
@@ -17,7 +17,7 @@
     margin: 0;
 }
 
-#list #listItems {
+#maplist #listItems {
     width: 420px;
     height: 500px;
     display: flex;

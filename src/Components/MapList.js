@@ -1,11 +1,11 @@
 import React from 'react';
 
-import '../css/List.css';
+import '../css/MapList.css';
 
-class List extends React.Component {
+class MapList extends React.Component {
     render() {
         return(
-            <div id='list'>
+            <div id='maplist'>
                 <h2>Régions</h2>
                 <div id='listItems'></div>
             </div>
@@ -13,4 +13,4 @@ class List extends React.Component {
     };
 };
 
-export default List;
+export default MapList;

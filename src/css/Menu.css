@@ -1,5 +1,7 @@
 #menu {
-    position: relative;
+    position: absolute;
+    top: auto;
+    right: 2%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

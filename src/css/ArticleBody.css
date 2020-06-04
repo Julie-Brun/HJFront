@@ -1,15 +1,16 @@
 #articleBody {
     position: relative;
-    /* display: flex;
-    flex-direction: row-reverse;
+    width: 100%;
+    height: auto;
+    display: flex;
     justify-content: flex-start;
-    align-items: flex-start; */
+    align-items: flex-start;
 }
 
 #articleBody h2 {
     position: absolute;
     top: -40px;
-    right: 150px;
+    right: 160px;
     font-family: 'Fredericka the Great', cursive;
     font-size: 45px;
     color: #ffffff;
@@ -18,28 +19,110 @@
 }
 
 #articleBody #article {
-    width: 1000px;
+    width: 100%;
     height: 500px;
     background: #1D5664;
     border: 5px solid white;
     border-radius: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: inline-block;
     margin: 20px 150px 20px 0;
+    overflow: auto;
 }
 
 #articleBody #article img {
+    float: left;
     width: 250px;
-    align-self: flex-start;
-    margin: 20px 0 0 70px;
+    margin: 20px 20px 0 60px;
 }
 
 #articleBody #article p {
-    width: 650px;
     text-align: justify;
-    margin: 20px 20px;
+    margin: 20px;
     font-family: 'Oswald', sans-serif;
     font-size: 16px;
     color: white;
+}
+
+@media screen and (max-width: 768px) {
+    #articleBody h2 {
+        position: absolute;
+        top: -40px;
+        right: 80px;
+        font-family: 'Fredericka the Great', cursive;
+        font-size: 45px;
+        color: #ffffff;
+        font-weight: normal;
+        margin: 0;
+    }
+
+    #articleBody #article {
+        width: 90%;
+        height: 480px;
+        background: #1D5664;
+        border: 5px solid white;
+        border-radius: 10px;
+        display: inline-block;
+        margin: 20px 30px;
+    }
+
+    #articleBody #article img {
+        float: left;
+        width: 175px;
+        margin: 20px 20px 0 20px;
+    }
+    
+    #articleBody #article p {
+        text-align: justify;
+        margin: 20px 20px;
+        font-family: 'Oswald', sans-serif;
+        font-size: 16px;
+        color: white;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    #articleBody {
+        position: relative;
+        width: 100%;
+        min-height: 575px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    #articleBody h2 {
+        position: initial;
+        /* top: -40px;
+        right: 40px; */
+        font-family: 'Fredericka the Great', cursive;
+        font-size: 35px;
+        color: #ffffff;
+        font-weight: normal;
+        margin: 0;
+    }
+
+    #articleBody #article {
+        width: 90%;
+        height: 480px;
+        background: #1D5664;
+        border: 5px solid white;
+        border-radius: 10px;
+        display: inline-block;
+        margin: 20px 0;
+    }
+
+    #articleBody #article img {
+        float: left;
+        width: 175px;
+        margin: 20px 20px 0 20px;
+    }
+    
+    #articleBody #article p {
+        text-align: justify;
+        margin: 20px 20px;
+        font-family: 'Oswald', sans-serif;
+        font-size: 16px;
+        color: white;
+    }
 }

@@ -17,3 +17,41 @@
     width: 100px;
     height: 100px;
 }
+
+/* #menuHome a img:hover {
+    width: 110px;
+    height: 110px;
+} */
+
+@media screen and (max-width: 768px) {
+    #menuHome {
+        width: 50%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    #menuHome a {
+        margin: 20px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    #menuHome {
+        width: 75%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    #menuHome a {
+        margin: 10px;
+    }
+
+    #menuHome a img {
+        width: 80px;
+        height: 80px;
+    }
+}

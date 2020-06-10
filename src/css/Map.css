@@ -7,3 +7,26 @@
     position: absolute;
     z-index: 10;
 }
+
+#map #mapContainer .mapboxgl-ctrl-geocoder {
+    position: absolute;
+    top: 6%;
+    right: 30%;
+}
+
+#map #mapContainer, .overlays, .mapboxgl-map {
+    border-radius: 50%;
+}
+
+canvas {
+    border-radius: 50%;
+}
+
+.marker {
+    width: 35px;
+    background: #1D5664;
+    border: 2px solid white;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+}

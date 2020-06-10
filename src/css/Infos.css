@@ -1,0 +1,63 @@
+#infoBody {
+    position: absolute;
+    top: 250px;
+    right: 100px;
+    width: 320px;
+    height: 375px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background: #1D5664;
+    border: 5px solid white;
+    border-radius: 10px;
+    z-index: 15;
+    padding: 25px;
+}
+
+#infoBody #infoHeader {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#infoBody #infoHeader img {
+    width: 125px;
+    height: 125px;
+}
+
+#infoBody #infoHeader h3 {
+    font-family: 'Fredericka the Great', cursive;
+    color: #ffffff;
+    font-size: 36px;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+#infoBody #text {
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    color: #ffffff;
+    text-align: justify;
+    overflow-y: auto;
+}
+
+#infoBody #button {
+    width: 125px;
+    height: 50px;
+    background: #1D5664;
+    border: 5px solid white;
+    border-radius: 10px;
+    font-family: 'Fredericka the Great', cursive;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: normal;
+    cursor: pointer;   
+    padding: 0;
+    margin: 0;
+}
+

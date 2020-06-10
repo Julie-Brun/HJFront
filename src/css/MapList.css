@@ -5,8 +5,8 @@
     align-items: flex-start;
     position: relative;
     z-index: 0;
-    top: -50px;
-    left: 115px;
+    top: -20px;
+    left: -300px;
 }
 
 #maplist h2 {
@@ -22,8 +22,17 @@
     height: 500px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
     border: 5px solid white;
     border-radius: 10px;
+    padding: 10px;
+}
+
+#maplist #listItems .listItem {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    color: #ffffff;
+    list-style: none;
+    cursor: pointer;
 }

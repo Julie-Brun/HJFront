@@ -36,3 +36,90 @@
     list-style: none;
     cursor: pointer;
 }
+
+@media screen and (max-width: 768px) {
+    #maplist {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        position: relative;
+        z-index: 0;
+        top: -100px;
+        left: -150px;
+    }
+    
+    #maplist h2 {
+        font-family: 'Fredericka the Great', cursive;
+        color: #ffffff;
+        font-size: 35px;
+        font-weight: normal;
+        margin: 0;
+    }
+    
+    #maplist #listItems {
+        width: 420px;
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        border: 5px solid white;
+        border-radius: 10px;
+        padding: 10px;
+    }
+    
+    #maplist #listItems .listItem {
+        font-family: 'Oswald', sans-serif;
+        font-size: 18px;
+        color: #ffffff;
+        list-style: none;
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    #maplist {
+        width: 375px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        position: static;
+        z-index: 0;
+        top: unset;
+        left: unset;
+    }
+    
+    #maplist h2 {
+        font-family: 'Fredericka the Great', cursive;
+        color: #ffffff;
+        font-size: 25px;
+        font-weight: normal;
+        margin: 0 0 0 10px;
+    }
+    
+    #maplist #listItems {
+        width: 355px;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        border: unset;
+        border-top: 5px solid white;
+        border-bottom: 5px solid white;
+        border-radius: unset;
+        padding: 10px;
+        margin: 0;
+    }
+    
+    #maplist #listItems .listItem {
+        font-family: 'Oswald', sans-serif;
+        font-size: 16px;
+        color: #ffffff;
+        list-style: none;
+        cursor: pointer;
+    }
+}

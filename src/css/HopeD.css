@@ -7,3 +7,15 @@
 #hopeD img {
     width: 150px;
 }
+
+@media screen and (max-width: 768px) {
+    #hopeD {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    #hopeD {
+        display: none;
+    }
+}

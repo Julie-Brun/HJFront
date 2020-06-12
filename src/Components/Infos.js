@@ -10,6 +10,7 @@ class Infos extends React.Component {
                 <div id='infoHeader'>
                     <img src={Logo} alt='Logo'/>
                     <h3 key={this.props.shelter._id}>{this.props.shelter.name}</h3>
+                    <button type='button' onClick={this.props.close}>X</button>
                 </div>
                 <p key={this.props.shelter._id} id='text'>{this.props.shelter.description}</p>
                 <a href={'/trouver/infos?id='+this.props.shelter._id}><button id='button' type='button'>En savoir +</button></a>

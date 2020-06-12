@@ -14,17 +14,7 @@ class Map extends React.Component {
 
         this.mapRef= React.createRef();
         this.geocoderContainerRef = React.createRef();
-
-    }
-
-    componentDidMount() {
-        window.addEventListener("resize", this.props.resize);
-        this.props.resize();
-    }
-    
-    componentWillUnmount() {
-        window.removeEventListener("resize", this.props.resize);
-    }
+    };
 
     render() {
         return(
@@ -33,10 +23,8 @@ class Map extends React.Component {
                 <ReactMapGL
                     ref={this.mapRef}
                     {...this.props.viewport}
-                    width='600px'
-                    height='600px'
                     mapStyle='mapbox://styles/mapbox/streets-v11'
-                    onViewportChange={this.props.handleViewportChange}
+                    onViewportChange={this.props.updateViewport}
                     mapboxApiAccessToken={MAPBOX_TOKEN}
                 >
                     <Geocoder
@@ -47,9 +35,9 @@ class Map extends React.Component {
                     />
                     {this.props.data.map(place => (
                         <Marker
-                        key={place._id}
-                        latitude={place.location.coordinates[1]}
-                        longitude={place.location.coordinates[0]}
+                            key={place._id}
+                            latitude={place.location.coordinates[1]}
+                            longitude={place.location.coordinates[0]}
                         >
                             <img 
                                 className='marker' 
@@ -64,7 +52,6 @@ class Map extends React.Component {
             </div>
         )
     }
-
 }
 
 export default Map;

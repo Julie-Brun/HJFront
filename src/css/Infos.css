@@ -38,6 +38,16 @@
     text-align: center;
 }
 
+#infoBody #infoHeader button {
+    background: #1D5664;
+    border: 5px solid white;
+    border-radius: 10px;
+    font-family: 'Oswald', sans-serif;
+    color: white;
+    cursor: pointer;   
+    align-self: flex-start;
+}
+
 #infoBody #text {
     font-family: 'Oswald', sans-serif;
     font-size: 16px;
@@ -59,5 +69,158 @@
     cursor: pointer;   
     padding: 0;
     margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+    #infoBody {
+        position: absolute;
+        top: 420px;
+        right: 30px;
+        width: 200px;
+        height: 250px;
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        background: #1D5664;
+        border: 5px solid white;
+        border-radius: 10px;
+        z-index: 15;
+        padding: 10px;
+    }
+    
+    #infoBody #infoHeader {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    #infoBody #infoHeader img {
+        width: 75px;
+        height: 75px;
+    }
+    
+    #infoBody #infoHeader h3 {
+        font-family: 'Fredericka the Great', cursive;
+        color: #ffffff;
+        font-size: 25px;
+        font-weight: normal;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+    
+    #infoBody #infoHeader button {
+        background: #1D5664;
+        border: 5px solid white;
+        border-radius: 10px;
+        font-family: 'Oswald', sans-serif;
+        color: white;
+        cursor: pointer;   
+        align-self: flex-start;
+    }
+    
+    #infoBody #text {
+        font-family: 'Oswald', sans-serif;
+        font-size: 16px;
+        color: #ffffff;
+        text-align: justify;
+        overflow-y: auto;
+    }
+    
+    #infoBody #button {
+        width: 110px;
+        height: 40px;
+        background: #1D5664;
+        border: 5px solid white;
+        border-radius: 10px;
+        font-family: 'Fredericka the Great', cursive;
+        color: #ffffff;
+        font-size: 17px;
+        font-weight: normal;
+        cursor: pointer;   
+        padding: 0;
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    #infoBody {
+        position: absolute;
+        top: unset;
+        bottom: -200px;
+        right: 0;
+        width: 355px;
+        height: 150px;
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        background: #1D5664;
+        border: unset;
+        border-top: 5px solid white;
+        border-bottom: 5px solid white;
+        border-radius: unset;
+        z-index: 15;
+        padding: 10px;
+    }
+    
+    #infoBody #infoHeader {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    #infoBody #infoHeader img {
+        width: 75px;
+        height: 75px;
+    }
+    
+    #infoBody #infoHeader h3 {
+        font-family: 'Fredericka the Great', cursive;
+        color: #ffffff;
+        font-size: 25px;
+        font-weight: normal;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+    
+    #infoBody #infoHeader button {
+        background: #1D5664;
+        border: 5px solid white;
+        border-radius: 10px;
+        font-family: 'Oswald', sans-serif;
+        color: white;
+        cursor: pointer;   
+        align-self: flex-start;
+    }
+    
+    #infoBody #text {
+        font-family: 'Oswald', sans-serif;
+        font-size: 16px;
+        color: #ffffff;
+        text-align: justify;
+        overflow-y: auto;
+    }
+    
+    #infoBody #button {
+        width: 110px;
+        height: 40px;
+        background: #1D5664;
+        border: 5px solid white;
+        border-radius: 10px;
+        font-family: 'Fredericka the Great', cursive;
+        color: #ffffff;
+        font-size: 17px;
+        font-weight: normal;
+        cursor: pointer;   
+        padding: 0;
+        margin: 0;
+    }
 }
 

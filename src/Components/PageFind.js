@@ -22,6 +22,8 @@ class PageFind extends React.Component {
             isDisplayed: false,
             isHovered: false,
             viewport: {
+                height: '100%',
+                width: '100%',
                 latitude: 48.866667,
                 longitude: 2.333333,
                 zoom: 8
@@ -30,9 +32,9 @@ class PageFind extends React.Component {
 
         this.displayInfosAndCenterViewport = this.displayInfosAndCenterViewport.bind(this);
         this.toggleHover = this.toggleHover.bind(this);
-        this.resize = this.resize.bind(this);
-        this.handleViewportChange = this.handleViewportChange.bind(this);
+        this.updateViewport = this.updateViewport.bind(this);
         this.handleGeocoderViewportChange = this.handleGeocoderViewportChange.bind(this);
+        this.close = this.close.bind(this);
     };
 
     componentDidMount() {
@@ -62,11 +64,11 @@ class PageFind extends React.Component {
         console.log(data);
         console.log(coordinates);
         
-        const viewport = {
+        let newViewport = {
             ...this.state.viewport,
             longitude: coordinates[0],
             latitude: coordinates[1],
-            zoom: 10,
+            zoom: 12,
             transitionDuration: 1000,
             transitionInterpolator: new FlyToInterpolator()
         }
@@ -74,10 +76,8 @@ class PageFind extends React.Component {
         this.setState({
             selectedShelter: data,
             isDisplayed: true,
-            viewport: viewport
-        })
-        console.log(this.state.viewport);
-        
+            viewport: newViewport
+        })        
     };
 
     toggleHover() {
@@ -86,51 +86,56 @@ class PageFind extends React.Component {
         })
     };
 
-    resize() {
-        this.handleViewportChange({
-            width: window.innerWidth,
-            height: window.innerHeight
-        });
-    };
-
-    handleViewportChange(viewport) {
-        console.log(viewport);
-        
+    updateViewport(viewport) {
         this.setState({
-            viewport: { ...this.state.viewport, ...viewport }
+            viewport: viewport
         });
     };
 
     handleGeocoderViewportChange(viewport) {
-        const geocoderDefaultOverrides = { transitionDuration: 1000 };
-        console.log(viewport);
-    
-        return this.handleViewportChange({
+        let flyTo = {
             ...viewport,
-            ...geocoderDefaultOverrides
+            transitionDuration: 1000,
+            transitionInterpolator: new FlyToInterpolator()
+        }
+    
+        return this.updateViewport({
+            ...flyTo
         });
+    };
+
+    close() {
+        if(this.state.isDisplayed) {
+            this.setState({
+                isDisplayed: false
+            })
+        }
     };
 
     render() {
         return(
             <div id='find'>
-
                 <Header/>
                 <div id='findBody'>
-                    <MapList displayInfosAndCenterViewport={this.displayInfosAndCenterViewport} data={this.state.data}/>
+                    <MapList 
+                        displayInfosAndCenterViewport={this.displayInfosAndCenterViewport} 
+                        data={this.state.data}/>
                     <Map
                         displayInfosAndCenterViewport={this.displayInfosAndCenterViewport} 
-                        handleViewportChange={this.handleViewportChange}
+                        updateViewport={this.updateViewport}
                         handleGeocoderViewportChange={this.handleGeocoderViewportChange}
-                        resize={this.resize}
                         viewport={this.state.viewport}
                         data={this.state.data}
                     />
-                    <Add toggleHover={this.toggleHover} isHovered={this.state.isHovered}/>
-                    <Infos isDisplayed={this.state.isDisplayed} shelter={this.state.selectedShelter}/>
+                    <Add 
+                        toggleHover={this.toggleHover} 
+                        isHovered={this.state.isHovered}/>
+                    <Infos 
+                        close={this.close}
+                        isDisplayed={this.state.isDisplayed} 
+                        shelter={this.state.selectedShelter}/>
                     <HopeD/>
                 </div>
-
             </div>
         );
     };

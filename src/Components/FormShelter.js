@@ -1,241 +1,145 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useForm, Controller } from "react-hook-form";
+import { ErrorMessage } from '@hookform/error-message';
+import { yupResolver } from '@hookform/resolvers';
+import * as Yup from 'yup';
 
-import NoLogo from '../img/NoLogo.png'
+import ImagePreview from './ImagePreview';
+import AddressField from './AddressField';
 import '../css/FormShelter.css';
 
-class FormShelter extends React.Component {
-    constructor(props) {
-        super(props);
+const FormShelter = () => {
+    const schema = Yup.object({
+        name: Yup.string().required('Obligatoire'),
+        logo: Yup.mixed(),
+        specializeAt: Yup.array().required('Veuillez sélectionner, au moins, une spécialité'),
+        address: Yup.string().required('Obligatoire'),
+        email: Yup.string().email("Format d'adresse email invalide").required('Obligatoire'),
+        phone01: Yup.string().required('Obligatoire'),
+        phone02: Yup.string(),
+        description: Yup.string().required('Obligatoire')
+    });
 
-        this.state = {
-            name: '',
-            imagePreview: NoLogo,
-            logo: '',
-            specializeAt: [],
-            address:  {
-                street: '',
-                postalCode: '',
-                city: '',
-                land: ''
+    const { register, errors, handleSubmit, control } = useForm({
+        resolver: yupResolver(schema)
+    });
+
+    const[isLoaded, setIsLoaded] = useState(false);
+    const[isData, setIsData] = useState('');
+    const[isError, setIsError] = useState('');
+    
+    const onSubmit = async(data) => { 
+        console.log(data);
+
+        const form = new FormData();
+        form.append("name", data.name);
+        form.append("logo", data.logo[0]);
+        form.append("specializeAt", data.specializeAt);
+        form.append("address", data.address);
+        form.append("email", data.email);
+        form.append("phone01", data.phone01);
+        form.append("phone02", data.phone02);
+        form.append("description", data.description);
+
+        const url = 'http://localhost:3050/home/trouver/ajouter';
+
+        const res = await fetch(url, {
+            method: 'POST',
+            body: form
+        })
+        .then(res => res.json())
+        .then(
+            (result) => {
+                setIsLoaded(true);
+                setIsData(result);                
+                console.log("Load:", isLoaded, "Data:", isData);
             },
-            email: '',
-            phone01: '',
-            phone02: '',
-            description: '',
-            data: [],
-            isLoaded: false,
-            error: null
-        };
-
-        this.handleChange = this.handleChange.bind(this);
-        this.isInArray = this.isInArray.bind(this);
-        this.addItem = this.addItem.bind(this);
-        this.removeItem = this.removeItem.bind(this);
-        this.handleCheckbox = this.handleCheckbox.bind(this);
-        this.previewLogo = this.previewLogo.bind(this);
-        this.handleAddress = this.handleAddress.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-    }
-
-    handleChange(e) {
-        const input = e.target;
-        const name = input.name;
-        const value = input.value;
-
-        this.setState({
-            [name]: value
-        });
-    };
-
-    isInArray(item) {
-        return this.state.specializeAt.some(j => item === j)
-    }
-
-    addItem(item, state) {
-        return [...state.specializeAt, item]
-    };
-
-    removeItem(item, state) {
-        return state.specializeAt.filter(j => item !== j);
-    };
-
-    handleCheckbox(e) {
-        const input = e.target;
-        const name = input.name;
-
-        this.setState(prevState =>{
-            const updatedArray = this.isInArray(name) ? this.removeItem(name, prevState) : this.addItem(name, prevState);
-            return {
-                specializeAt: updatedArray
+            (error) => {
+                setIsLoaded(true);
+                setIsError(error)
+                console.log("Load:", isLoaded, "error:", isError);
             }
-        });   
-    }
+        );
+    };
 
-    previewLogo(e) {
+    const [imagePreview, setImagePreview] = useState('');
+
+    const previewLogo = (e) => {
         let reader = new FileReader();
         let file = e.target.files[0];
+        console.log(file);
 
         if (file) {
             reader.onloadend = () => {
-                this.setState({
-                    logo: file,
-                    imagePreview: reader.result
-                });
+                setImagePreview(reader.result)
             }
            reader.readAsDataURL(file);
         } else {
             return file;
         }
-    }
-
-    handleAddress(e) {
-        const input = e.target;
-        const name = input.name;
-        const value = input.value;
-
-        this.setState(prevState => ({
-            address : {
-                ...prevState.address,
-                [name]: value
-            }
-        }));
-    }
-
-    handleSubmit(e) {
-        e.preventDefault();
-        const {street, postalCode, city, land} = this.state.address;
-        const address = `${street}, ${postalCode}, ${city}, ${land}`;
-
-        const form = new FormData();
-        form.append("name", this.state.name);
-        form.append("logo", this.state.logo);
-        form.append("specializeAt", this.state.specializeAt);
-        form.append("address", address);
-        form.append("email", this.state.email);
-        form.append("phone01", this.state.phone01);
-        form.append("phone02", this.state.phone02);
-        form.append("description", this.state.description);
-
-        // const data = {
-        //     name: this.state.name,
-        //     logo: this.state.logo,
-        //     specializeAt: this.state.specializeAt,
-        //     address: address,
-        //     email: this.state.email,
-        //     phone01: this.state.phone01,
-        //     phone02: this.state.phone02,
-        //     description: this.state.description
-        // };
-        
-        const url = 'http://localhost:3050/home/trouver/ajouter';
-        
-        fetch(url, {
-            method: 'POST',
-            mode: 'cors',
-            body: form,
-            headers: {
-                'Content-Type': 'multipart/form-data'
-            }
-        })
-        .then(res => res.json())
-        .then(
-            (result) => {
-                this.setState({
-                  isLoaded: true,
-                  data: result
-                });                
-                console.log("Load:", this.state.isLoaded, "Data:", this.state.data);
-            },
-            (error) => {
-                this.setState({
-                  isLoaded: true,
-                  error
-                });
-                console.log("Load:", this.state.isLoaded, "error:", this.state.error);
-            }
-        );
-
-        console.log("Data:", this.state.data, "isLoaded:", this.state.isLoaded, "Error:", this.state.error);
-
     };
 
-    render() {
+    return(
+        <div id='form'>
+            <h2>Ajout d'un Refuge</h2>
+            <form onSubmit={handleSubmit(onSubmit)}>
+                <label id='nameLabel' htmlFor='name'>Nom de l'Association/du Refuge</label>
+                <input id='nameInput' name='name' placeholder='Refuge de Tata Monique' ref={register}/>
+                <ErrorMessage as='span' errors={errors} name='name' />
 
-        console.log(this.state.logo);
-        
-        let imagePreviewUrl = this.state.imagePreview;
-        let $imagePreview = null;
-        if (imagePreviewUrl) {
-            $imagePreview = (<img src={imagePreviewUrl} alt='Logo' />);
-        } else {
-            $imagePreview = (<img src={NoLogo} alt='Pas de Logo'/>);
-        }
-        
-        return(
-            <div id='form'>
-                <h2>Ajout d'un Refuge</h2>
-                <form id='formAddShelter' onSubmit={this.handleSubmit}>
-                    <label className='name'>Nom de l'Association/du Refuge
-                        <input className='name' type='text' name='name' value={this.state.name} onChange={this.handleChange}/>
+                <ImagePreview imagePreview={imagePreview}/>
+                <label id='logoLabel' htmlFor='logo'>Logo/Image</label>
+                <input id='logoInput' name='logo' type='file' ref={register} onChange={(event) => {previewLogo(event);}} />
+
+                <p>Spécialisé dans :</p>
+                <div id='checkboxField' name='specializeAt'>
+                    <label className='checkboxLabel'>Chiens
+                        <input className='checkboxInput' type='checkbox' name='specializeAt' value='Chiens' ref={register}/>
                     </label>
-                    {$imagePreview}
-                    <label id='choiceField' className='logo'>Logo/Image
-                        <input className='logo' type='file' name='logo' onChange={this.previewLogo}/>
+                    <label className='checkboxLabel'>Chats
+                        <input className='checkboxInput' type='checkbox' name='specializeAt' value='Chats' ref={register}/>
                     </label>
-                    <p>Spécialisé dans :</p>
-                    <div id='checkboxField'>
-                        <label className='check chien'>Chiens
-                            <input className='check chien' type='checkbox' name='Chiens' value={this.state.chiens} onChange={this.handleCheckbox}/>
-                        </label>
-                        <label className='check chats'>Chats
-                            <input className='check chats' type='checkbox' name='Chats' value={this.state.chats} onChange={this.handleCheckbox}/>
-                        </label>
-                        <label className='check rongeurs'>Rongeurs
-                            <input className='check rongeurs' type='checkbox' name='Rongeurs' value={this.state.rongeurs} onChange={this.handleCheckbox}/>
-                        </label>
-                        <label className='check reptiles'>Reptiles
-                            <input className='check reptiles' type='checkbox' name='Reptiles' value={this.state.reptiles} onChange={this.handleCheckbox}/>
-                        </label>
-                        <label className='check chevaux'>Chevaux
-                            <input className='check chevaux' type='checkbox' name='Chevaux' value={this.state.chevaux} onChange={this.handleCheckbox}/>
-                        </label>
-                        <label className='check animauxFerme'>Animaux de Ferme
-                            <input className='check animauxFerme' type='checkbox' name='Animaux de ferme' value={this.state.animauxFerme} onChange={this.handleCheckbox}/>
-                        </label>
-                        <label className='check autres'>Autres
-                            <input className='check autres' type='checkbox' name='Autres' value={this.state.autres} onChange={this.handleCheckbox}/>
-                        </label>
-                    </div>
-                    
-                    <label className='street'>Rue
-                        <input className='street' type='text' name='street' value={this.state.address.street} onChange={this.handleAddress}/>
+                    <label className='checkboxLabel'>Rongeurs
+                        <input className='checkboxInput' type='checkbox' name='specializeAt' value='Rongeurs' ref={register}/>
                     </label>
-                    <label className='postalCode'>Code Postal
-                        <input className='postalCode' type='text' name='postalCode' value={this.state.address.postalCode} onChange={this.handleAddress}/>
-                    </label>                        
-                    <label className='city'>Ville
-                        <input className='city' type='text' name='city' value={this.state.address.city} onChange={this.handleAddress}/>
+                    <label className='checkboxLabel'>Reptiles
+                        <input className='checkboxInput' type='checkbox' name='specializeAt' value='Reptiles' ref={register}/>
                     </label>
-                    <label className='land'>Pays
-                        <input className='land' type='text' name='land' value={this.state.address.land} onChange={this.handleAddress}/>
+                    <label className='checkboxLabel'>Chevaux
+                        <input className='checkboxInput' type='checkbox' name='specializeAt' value='Chevaux' ref={register}/>
                     </label>
-                    <label className='email'>Email
-                        <input className='email' type='email' name='email' value={this.state.email} onChange={this.handleChange}/>
+                    <label className='checkboxLabel'>Animaux de Ferme
+                        <input className='checkboxInput' type='checkbox' name='specializeAt' value='Animaux de Ferme' ref={register}/>
                     </label>
-                    <label className='phone01'>Téléphone 01
-                        <input className='phone01' type='text' name='phone01' value={this.state.phone01} onChange={this.handleChange}/>
+                    <label className='checkboxLabel'>Autres
+                        <input className='checkboxInput' type='checkbox' name='specializeAt' value='Autres' ref={register}/>
                     </label>
-                    <label className='phone02'>Téléphone 02
-                        <input className='phone02' type='text' name='phone02'value={this.state.phone02} onChange={this.handleChange}/>
-                    </label>
-                    <label id='description' className='description'>Description
-                        <textarea className='description' type='text' name='description' form='formAddShelter' value={this.state.description} onChange={this.handleChange}/>
-                    </label>
-                </form>
-                <button type='submit' form='formAddShelter'>Envoyer</button>
-            </div>
-        );
-    };
-};
+                </div>
+                <ErrorMessage as='span' errors={errors} name='specializeAt' />
+
+                <Controller as={<AddressField/>} id='addressField' name='address' control={control} defaultValue=''/>
+                <ErrorMessage as='span' errors={errors} name='address'/>
+
+                <label id='emailLabel' htmlFor='email'>Email</label>
+                <input id='emailInput' name='email' placeholder='tatamonique@mail.fr' ref={register}/>
+                <ErrorMessage as='span' errors={errors} name='email' />
+
+                <label id='phone01Label' htmlFor='phone01'>Téléphone 01</label>
+                <input id='phone01Input' name='phone01' placeholder='0123456789' ref={register}/>
+                <ErrorMessage as='span' errors={errors} name='phone01'/>
+
+                <label id='phone02Label' htmlFor='phone02'>Téléphone 02</label>
+                <input id='phone02Input' name='phone02' placeholder='0123456789' ref={register}/>
+
+                <div id='description'>
+                    <label id='descriptionLabel' htmlFor='description'>Description</label>
+                    <textarea id='descriptionInput' name='description' placeholder='Un petit mot sur votre asso/refuge ?' ref={register}/>
+                    <ErrorMessage as='span' errors={errors} name='description' />                           
+                </div>
+                <button type='submit'>Envoyer</button>
+            </form>
+        </div>
+    )
+}
 
 export default FormShelter;

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 import {FlyToInterpolator} from 'react-map-gl';
 
 import Header from './Header';
@@ -115,7 +116,8 @@ class PageFind extends React.Component {
     render() {
         return(
             <div id='find'>
-                <Header/>
+                <Header redirectToHome={this.props.redirectToHome}/>
+                { this.props.toHome ? <Redirect push to='/'/> : null }
                 <div id='findBody'>
                     <MapList 
                         displayInfosAndCenterViewport={this.displayInfosAndCenterViewport} 

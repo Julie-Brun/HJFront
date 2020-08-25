@@ -1,14 +1,43 @@
 #shelName {
+    height: auto;
     position: absolute;
-    top: 26%;
+    /* top: 20%; */
     left: 33%;
 }
 
 #shelName h2 {
+    width: 350px;
+    height: 100%;
+    flex-wrap: wrap;
     font-family: 'Fredericka the Great', cursive;
     color: #ffffff;
     font-size: 40px;
     font-weight: normal;
     margin: 0;
-    text-align: end;
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    
+}
+
+@media screen and (max-width: 375px) {
+    #shelName {
+        height: auto;
+        position: initial;
+        /* top: 20%; */
+        /* left: 33%; */
+    }
+
+    #shelName h2 {
+        width: 350px;
+        height: 100%;
+        flex-wrap: wrap;
+        font-family: 'Fredericka the Great', cursive;
+        color: #ffffff;
+        font-size: 30px;
+        font-weight: normal;
+        margin: 0;
+        text-align: center;
+    }
 }

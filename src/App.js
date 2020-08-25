@@ -11,17 +11,34 @@ import PageAddShelter from './Components/PageAddShelter';
 import './css/App.css';
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state= {
+        toHome: false
+    };
+    
+    this.redirectToHome = this.redirectToHome.bind(this);
+  };
+
+  redirectToHome() {
+    console.log(this.state.toHome);
+    this.setState({
+        toHome: true
+    });
+  };
+
   render() {
     return (
       <Router>
           <Switch>
             
-            <Route exact path="/" component={PageHome}/>
-            <Route exact path="/jouer" component={PagePlay}/>
-            <Route exact path="/apprendre" component={PageLearn}/>
-            <Route exact path="/trouver" component={PageFind}/>
-            <Route exact path="/trouver/infos" component={PageInfosShelter}/>
-            <Route exact path="/trouver/ajouter" component={PageAddShelter}/>
+            <Route exact path="/" render={(props) => <PageHome {...props} toHome={this.state.toHome} redirectToHome={this.redirectToHome}/>}/>
+            <Route exact path="/jouer" render={(props) => <PagePlay {...props} toHome={this.state.toHome} redirectToHome={this.redirectToHome}/>}/>
+            <Route exact path="/apprendre" render={(props) => <PageLearn {...props} toHome={this.state.toHome} redirectToHome={this.redirectToHome}/>}/>
+            <Route exact path="/trouver" render={(props) => <PageFind {...props} toHome={this.state.toHome} redirectToHome={this.redirectToHome}/>}/>
+            <Route exact path="/trouver/infos" render={(props) => <PageInfosShelter {...props} toHome={this.state.toHome} redirectToHome={this.redirectToHome}/>}/>
+            <Route exact path="/trouver/ajouter" render={(props) => <PageAddShelter {...props} toHome={this.state.toHome} redirectToHome={this.redirectToHome}/>}/>
             
           </Switch>
       </Router>

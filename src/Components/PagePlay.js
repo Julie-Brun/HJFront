@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 
 import Header from './Header';
 
@@ -9,7 +10,8 @@ class PagePlay extends React.Component {
         return(
             <div id='play'>
 
-                <Header/>
+                <Header redirectToHome={this.props.redirectToHome}/>
+                { this.props.toHome ? <Redirect push to='/'/> : null }
                 <div id='playBody'></div>
 
             </div>

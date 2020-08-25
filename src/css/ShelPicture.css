@@ -11,4 +11,19 @@
     height: 250px;
     border: 6px solid white;
     border-radius: 10px;
+    background: #1D5664;
+}
+
+@media screen and (max-width: 768px) {
+
+}
+
+@media screen and (max-width: 375px) {
+    #shelPicture {
+        width: 275px;
+        height: 275px;
+        position: initial;
+        /* top: 150px; */
+        /* left: 55%; */
+    }
 }

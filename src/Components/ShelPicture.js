@@ -1,14 +1,13 @@
 import React from 'react';
 
-import Logo from '../img/LogoDefaut.png'
-
 import '../css/ShelPicture.css';
 
 class ShelPicture extends React.Component {
     render() {
+        const local = "http://localhost:3050/";
         return(
             <div id='shelPicture'>
-                <img src={Logo} alt='Logo'/>
+                <img src={local + this.props.picture} alt='Logo du refuge'/>
             </div>
         )
     }

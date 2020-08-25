@@ -8,7 +8,7 @@ class Header extends React.Component {
     render() {
         return(
             <div id='header'>
-                <Title title="Hope's Journey" subtitle="Le voyage de Hope"/>
+                <Title title="Hope's Journey" subtitle="Le voyage de Hope" redirectToHome={this.props.redirectToHome}/>
                 <Menu/>
             </div>
         );

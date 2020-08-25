@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 
 import Header from './Header';
 import ArticleList from './ArticleList';
@@ -50,7 +51,8 @@ class PageLearn extends React.Component {
         
         return(
             <div id='learn'>
-                <Header/>
+                <Header redirectToHome={this.props.redirectToHome}/>
+                { this.props.toHome ? <Redirect push to='/'/> : null }
                 <div id='learnBody'>
                     <ArticleList 
                     articles={this.state.articles}

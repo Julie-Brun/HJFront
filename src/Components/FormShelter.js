@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom';
 import { useForm, Controller } from "react-hook-form";
 import { ErrorMessage } from '@hookform/error-message';
 import { yupResolver } from '@hookform/resolvers';
@@ -6,6 +7,7 @@ import * as Yup from 'yup';
 
 import ImagePreview from './ImagePreview';
 import AddressField from './AddressField';
+import Loading from './Loading';
 import '../css/FormShelter.css';
 
 const FormShelter = () => {
@@ -24,9 +26,10 @@ const FormShelter = () => {
         resolver: yupResolver(schema)
     });
 
-    const[isLoaded, setIsLoaded] = useState(false);
-    const[isData, setIsData] = useState('');
-    const[isError, setIsError] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
+    const [isData, setIsData] = useState('');
+    const [isError, setIsError] = useState('');
+    const [toMap, setToMap] = useState(false);
     
     const onSubmit = async(data) => { 
         console.log(data);
@@ -34,7 +37,7 @@ const FormShelter = () => {
         const form = new FormData();
         form.append("name", data.name);
         form.append("logo", data.logo[0]);
-        form.append("specializeAt", data.specializeAt);
+        form.append("specializeAt", JSON.stringify(data.specializeAt));
         form.append("address", data.address);
         form.append("email", data.email);
         form.append("phone01", data.phone01);
@@ -43,23 +46,27 @@ const FormShelter = () => {
 
         const url = 'http://localhost:3050/home/trouver/ajouter';
 
-        const res = await fetch(url, {
+        await fetch(url, {
             method: 'POST',
             body: form
         })
         .then(res => res.json())
         .then(
             (result) => {
-                setIsLoaded(true);
+                setIsLoading(true);
                 setIsData(result);                
-                console.log("Load:", isLoaded, "Data:", isData);
+                console.log("Load:", isLoading, "Data:", isData);
             },
             (error) => {
-                setIsLoaded(true);
+                setIsLoading(true);
                 setIsError(error)
-                console.log("Load:", isLoaded, "error:", isError);
+                console.log("Load:", isLoading, "error:", isError);
             }
         );
+        setTimeout(() => {
+            setIsLoading(false);
+            setToMap(true);
+        }, 3000);
     };
 
     const [imagePreview, setImagePreview] = useState('');
@@ -81,6 +88,8 @@ const FormShelter = () => {
 
     return(
         <div id='form'>
+            {isLoading ? <Loading/> : null }
+            {toMap ? <Redirect to='/trouver'/> : null }
             <h2>Ajout d'un Refuge</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <label id='nameLabel' htmlFor='name'>Nom de l'Association/du Refuge</label>
@@ -101,6 +110,9 @@ const FormShelter = () => {
                     </label>
                     <label className='checkboxLabel'>Rongeurs
                         <input className='checkboxInput' type='checkbox' name='specializeAt' value='Rongeurs' ref={register}/>
+                    </label>
+                    <label className='checkboxLabel'>Oiseaux
+                        <input className='checkboxInput' type='checkbox' name='specializeAt' value='Oiseaux' ref={register}/>
                     </label>
                     <label className='checkboxLabel'>Reptiles
                         <input className='checkboxInput' type='checkbox' name='specializeAt' value='Reptiles' ref={register}/>

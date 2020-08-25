@@ -44,7 +44,7 @@ canvas {
         position: absolute;
         top: 20%;
         right: 9%;
-        z-index: 10;
+        z-index: -10;
     }
     
     #map #mapContainer .mapboxgl-ctrl-geocoder {
@@ -85,7 +85,7 @@ canvas {
         position: static;
         top: 20%;
         right: 1%;
-        z-index: 10;
+        z-index: -10;
     }
     
     #map #mapContainer .mapboxgl-ctrl-geocoder {

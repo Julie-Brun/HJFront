@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 
 import Header from './Header';
 import HopeG from './HopeG';
@@ -15,9 +16,9 @@ class PageInfosShelter extends React.Component {
         this.state= {
             data: [],
             isLoaded: false,
-            error: null
+            error: null,
         }
-    }
+    };
 
     componentDidMount() {
         const url = 'http://localhost:3050/home/trouver/infos' + this.props.location.search;
@@ -44,20 +45,22 @@ class PageInfosShelter extends React.Component {
 
     render() {
         console.log(this.props.location.search);
+        console.log(this.state.data.logo);
         
         return(
             <div id='info'>
-                <Header/>
+                <Header redirectToHome={this.props.redirectToHome}/>
+                { this.props.toHome ? <Redirect push to='/'/> : null }
                 <div id='infosBody'>
                     <HopeG/>
                     <ShelName
                         name={this.state.data.name}
                     />
-                    <ShelInfos
-                        data={this.state.data}
-                    />
                     <ShelPicture
                         picture={this.state.data.logo}
+                    />
+                    <ShelInfos
+                        data={this.state.data}
                     />
                 </div>
 

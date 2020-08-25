@@ -2,24 +2,21 @@ import React from 'react';
 
 import '../css/ShelInfos.css';
 
-class ShelInfos extends React.Component {
-    render() {
-        return(
-            <div id='shelInfos'>
-                <ul id='infos'>
-                    <li id='shelType'><span>Spécialisée dans :</span> Truc</li>
-                    <li id='shelAddress'><span>Adresse :</span> Bidule</li>
-                    <li id='shelEmail'><span>Email :</span> Machin</li>
-                    <li id='shelPhone01'><span>Téléphone :</span> Chose</li>
-                    <li id='shelPhone02'><span>Portable :</span> Chouette</li>
-                </ul>
-                <p id='description'>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-            </div>
-        )
-    }
+const ShelInfos = (props) => {
+    return(
+        <div id='shelInfos'>
+            <ul id='infos'>
+                <li id='shelType' className='resize'><span>Spécialisée dans :</span> {props.data.specializeAt && props.data.specializeAt.map((item) => { return `  ${item}`})}</li>
+                <li id='shelAddress' className='resize'><span>Adresse :</span> {props.data.address}</li>
+                <li id='shelEmail' className='resize'><span>Email :</span> {props.data.email} </li>
+                <li id='shelPhone01'><span>Téléphone 01 :</span> {props.data.phone01}</li>
+                <li id='shelPhone02' style={props.data.phone02 ? {display: 'inline'} : {display: 'none'}}><span>Téléphone 02 :</span> {props.data.phone02}</li>
+            </ul>
+            <p id='description'>
+                {props.data.description}
+            </p>
+        </div>
+    );
 }
 
 export default ShelInfos;

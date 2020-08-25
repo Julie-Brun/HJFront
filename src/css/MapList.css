@@ -30,6 +30,20 @@
     overflow-y: auto;
 }
 
+#maplist #listItems input {
+    width: 250px;
+    height: 35px;
+    background: #1D5664;
+    border: 5px solid white;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px 5px 15px 5px;
+    font-family: 'Oswald', sans-serif;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: normal;
+}
+
 #maplist #listItems .listItem {
     font-family: 'Oswald', sans-serif;
     font-size: 20px;

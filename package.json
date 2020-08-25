@@ -11,6 +11,7 @@
     "deck.gl": "^8.1.9",
     "formik": "^2.1.5",
     "mapbox-gl": "^1.10.1",
+    "node-sass": "^4.14.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-hook-form": "^6.3.2",

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 
 import Header from './Header';
 import FormShelter from './FormShelter';
@@ -10,7 +11,8 @@ class PageAddShelter extends React.Component {
     render() {
         return(
             <div id='addShelter'>
-                <Header/>
+                <Header redirectToHome={this.props.redirectToHome}/>
+                { this.props.toHome ? <Redirect push to='/'/> : null }
                 <div id='addShelterBody'>
                     <FormShelter/>
                     <HopeD/>

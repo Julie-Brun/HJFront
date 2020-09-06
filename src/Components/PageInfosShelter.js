@@ -49,7 +49,7 @@ class PageInfosShelter extends React.Component {
         
         return(
             <div id='info'>
-                <Header redirectToHome={this.props.redirectToHome}/>
+                <Header adminPage={this.props.adminPage} redirectToHome={this.props.redirectToHome}/>
                 { this.props.toHome ? <Redirect push to='/'/> : null }
                 <div id='infosBody'>
                     <HopeG/>

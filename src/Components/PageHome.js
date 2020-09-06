@@ -10,7 +10,7 @@ class Home extends React.Component {
     render() {
         return(
             <div id='home'>
-                <Header/>
+                <Header adminPage={this.props.adminPage}/>
                 <div id='homeBody'>
                     <Img/>
                     <MenuHome/>

@@ -1,0 +1,42 @@
+#logOut {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#logOut #logOutBody {
+    width: 100%;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#logOut #logOutBody p {
+    font-family: 'Fredericka the Great', cursive;
+    color: #ffffff;
+    font-size: 35px;
+    font-weight: normal;
+    margin: 30px;
+}
+
+#logOut #logOutBody button {
+    width: 250px;
+    height: 35px;
+    background: #1D5664;
+    border: 5px solid white;
+    border-radius: 10px;
+    font-family: 'Fredericka the Great', cursive;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: normal;
+    cursor: pointer;   
+    padding: 0;
+    margin: 10px 0;
+}

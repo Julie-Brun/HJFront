@@ -1,0 +1,97 @@
+#manageShelters {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 80vh;
+    /* top: 18%; */
+    /* left: 5%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#manageShelters #manageSheltersBody {
+    /* position: relative;
+    top: 20%; */
+    width: 100%;
+    height: 80vh;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* overflow-y: auto; */
+}
+
+#manageShelters #manageSheltersBody h2 {
+    font-family: 'Fredericka the Great', cursive;
+    color: #FFFFFF;
+    font-size: 45px;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+}
+
+#manageShelters #manageSheltersBody .listShelters {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 15px 15px 30px 15px;
+    overflow: auto;
+}
+
+@media screen and (max-width: 768px) {
+    #manageShelters {
+        position: relative;
+        width: 100%;
+        /* height: 100vh; */
+        /* top: 18%; */
+        /* left: 5%; */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    #manageShelters #manageSheltersBody {
+        /* position: relative;
+        top: 20%; */
+        width: 100%;
+        /* height: 80%; */
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-around;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    #manageShelters {
+        position: relative;
+        width: 100%;
+        /* height: 100vh; */
+        /* top: 18%; */
+        /* left: 5%; */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #manageShelters #manageSheltersBody {
+        /* position: relative;
+        top: 20%; */
+        width: 100%;
+        min-height: 90vh;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-around;
+        align-items: center;
+    }
+}

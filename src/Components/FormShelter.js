@@ -34,21 +34,33 @@ const FormShelter = () => {
     const onSubmit = async(data) => { 
         console.log(data);
 
-        const form = new FormData();
-        form.append("name", data.name);
-        form.append("logo", data.logo[0]);
-        form.append("specializeAt", JSON.stringify(data.specializeAt));
-        form.append("address", data.address);
-        form.append("email", data.email);
-        form.append("phone01", data.phone01);
-        form.append("phone02", data.phone02);
-        form.append("description", data.description);
+        const name = data.name;
+        const logo = data.logo[0];
+        const specializeAt = JSON.stringify(data.specializeAt);
+        const address = data.address;
+        const email = data.email;
+        const phone01 = data.phone01;
+        const phone02 = data.phone02;
+        const description = data.description;
 
         const url = 'http://localhost:3050/home/trouver/ajouter';
 
         await fetch(url, {
             method: 'POST',
-            body: form
+            headers : {
+                Accept: "application/json",
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                name,
+                logo,
+                specializeAt,
+                address,
+                email,
+                phone01,
+                phone02,
+                description
+            })
         })
         .then(res => res.json())
         .then(
@@ -87,7 +99,7 @@ const FormShelter = () => {
     };
 
     return(
-        <div id='form'>
+        <div id='shelterForm'>
             {isLoading ? <Loading/> : null }
             {toMap ? <Redirect to='/trouver'/> : null }
             <h2>Ajout d'un Refuge</h2>
@@ -127,7 +139,7 @@ const FormShelter = () => {
                         <input className='checkboxInput' type='checkbox' name='specializeAt' value='Autres' ref={register}/>
                     </label>
                 </div>
-                <ErrorMessage as='span' errors={errors} name='specializeAt' />
+                <ErrorMessage as='span' errors={errors} name='specializeAt'/>
 
                 <Controller as={<AddressField/>} id='addressField' name='address' control={control} defaultValue=''/>
                 <ErrorMessage as='span' errors={errors} name='address'/>

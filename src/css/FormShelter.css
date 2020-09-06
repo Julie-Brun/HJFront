@@ -1,4 +1,4 @@
-#form {
+#shelterForm {
     width: 100%;
     height: 100%;
     display: flex;
@@ -7,7 +7,7 @@
     align-items: center;
 }
 
-#form h2 {
+#shelterForm h2 {
     font-family: 'Fredericka the Great', cursive;
     color: #ffffff;
     font-size: 40px;
@@ -15,7 +15,7 @@
     margin: 5px 20px;
 }
 
-#form button {
+#shelterForm button {
     width: 150px;
     height: 35px;
     background: #1D5664;
@@ -30,7 +30,7 @@
     margin: 10px 0;
 }
 
-#form form {
+#shelterForm form {
     width: 99%;
     height: 65%;
     display: flex;
@@ -41,7 +41,7 @@
     margin: 0 0 0 10px;
 }
 
-#form form label {
+#shelterForm form label {
     width: 100%;
     height: auto;
     display: flex;
@@ -54,7 +54,7 @@
     font-weight: normal;
 }
 
-#form form input:not(.checkboxInput) {
+#shelterForm form input:not(.checkboxInput) {
     width: 350px;
     height: 25px;
     background: #1D5664;
@@ -68,7 +68,7 @@
     font-weight: normal;
 }
 
-#form form #logoInput {
+#shelterForm form #logoInput {
     width: 250px;
     height: 25px;
     background: #1D5664;
@@ -82,14 +82,14 @@
     font-weight: normal;
 }
 
-#form form p {
+#shelterForm form p {
     font-family: 'Fredericka the Great', cursive;
     color: #ffffff;
     font-size: 20px;
     margin: 10px 0;
 }
 
-#form form #checkboxField {
+#shelterForm form #checkboxField {
     width: 40%;
     height: 27%;
     display: flex;
@@ -100,7 +100,7 @@
     margin: 0 0 20px 0;
 }
 
-#form form #checkboxField .checkboxLabel {
+#shelterForm form #checkboxField .checkboxLabel {
     width: 22%;
     height: 25%;
     display: flex;
@@ -109,11 +109,11 @@
     margin: 5px;
 }
 
-#form form #checkboxField .checkboxLabel .checkboxInput {
+#shelterForm form #checkboxField .checkboxLabel .checkboxInput {
     margin: 0;
 }
 
-#form form #description {
+#shelterForm form #description {
     width: 50%;
     height: 300px;
     display: flex;
@@ -122,11 +122,11 @@
     align-items: center;
 }
 
-#form form #description label {
+#shelterForm form #description label {
     height: 15%;
 }
 
-#form form #description textarea {
+#shelterForm form #description textarea {
     width: 90%;
     height: 100%;
     background: #1D5664;
@@ -141,21 +141,21 @@
     font-weight: normal;
 }
 
-#form form span {
+#shelterForm form span {
     font-family: 'Oswald', sans-serif;
     color: #e2a99b;
 }
 
 @media screen and (max-width: 375px) {
-    #form form input:not(.checkboxInput) {
+    #shelterForm form input:not(.checkboxInput) {
         width: 340px;
     }
     
-    #form form #checkboxField {
+    #shelterForm form #checkboxField {
         width: 85%;
     }
     
-    #form form #description {
+    #shelterForm form #description {
         width: 100%;
     }
 }

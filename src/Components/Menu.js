@@ -1,9 +1,7 @@
 import React from 'react';
 
-import Jouer from '../img/Play2.png';
-import Apprendre from '../img/Learn2.png';
-import Trouver from '../img/Search2.png';
-import Contacter from '../img/Contact2.png';
+import AdminsIcons from './AdminsIcons';
+import Icons from './Icons';
 
 import '../css/Menu.css';
 
@@ -19,17 +17,13 @@ class Menu extends React.Component {
         this.handleClick = this.handleClick.bind(this);
     };
 
-
-
     handleClick() {
-
         this.setState({
             toggle: !this.state.toggle
         });
-    }
+    };
 
     render() {
-
         const styles = {
             lineTop: {
               transform: this.state.toggle ? ' translate(4px) rotate(45deg)':'none',
@@ -49,12 +43,12 @@ class Menu extends React.Component {
                 border: this.state.toggle ? '2px solid white':'none',
                 borderRadius: this.state.toggle ? '10px':'none',
                 background: this.state.toggle ? '#1D5664':'none',
-                height: this.state.toggle ? '450px': '0px',
+                height: this.state.toggle ? 'fit-content': '0px',
             },
             openNav: {
                 display: this.state.toggle ? 'flex':'none',
             }
-        }
+        };
 
         return (
             <div id='menu' style={{...styles.openMenu}}>
@@ -65,14 +59,8 @@ class Menu extends React.Component {
                 </div>
                 <div id='nav' style={{...styles.openNav}} >
                     <h3>Menu</h3>
-                    <ul>
-                        <li><a href='/jouer'><img src={Jouer} alt='bouton Jouer'/>Jouer</a></li>
-                        <li><a href='/apprendre'><img src={Apprendre} alt='bouton Apprendre'/>Apprendre</a></li>
-                    </ul>
-                    <ul>
-                        <li><a href='/trouver'><img src={Trouver} alt='bouton Trouver'/>Trouver</a></li>
-                        <li><a href='mailto:hopes.journey.contact@gmail.com'><img src={Contacter} alt='bouton Contacter'/>Contacter</a></li>
-                    </ul>
+                    <Icons/>
+                    {localStorage.getItem('token') ? <AdminsIcons/> : null}
                 </div>
             </div>
         );

@@ -1,0 +1,121 @@
+.listIcons {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 300px;
+    height: fit-content;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.listIcons li {
+    width: 140px;
+    height: 140px;
+    transition: all 0.3s ease;
+    margin: 10px 5px;
+}
+
+.listIcons li a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-family: 'Oswald', serif;
+    color: #FFFFFF;
+    font-size: 24px;
+    line-height: 100%;
+    transition: all 0.3s ease;
+}
+
+.listIcons li a img {
+    width: 100px;
+    height: 100px;
+    padding: 10%;
+}
+
+@media screen and (max-width: 768px) {
+    .listIcons {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 300px;
+        height: 110px;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+    
+    .listIcons li {
+        transition: all 0.3s ease;
+        margin: 20px 0;
+    }
+    
+    .listIcons li a {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        font-family: 'Oswald', serif;
+        color: #FFFFFF;
+        font-size: 24px;
+        line-height: 5%;
+        transition: all 0.3s ease;
+    }
+    
+    .listIcons li a img {
+        width: 100px;
+        height: 100px;
+        padding: 10%;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .listIcons {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 300px;
+        height: 110px;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+    
+    .listIcons li {
+        transition: all 0.3s ease;
+        margin: 20px 0;
+    }
+    
+    .listIcons li a {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        font-family: 'Oswald', serif;
+        color: #FFFFFF;
+        font-size: 24px;
+        line-height: 5%;
+        transition: all 0.3s ease;
+    }
+    
+    .listIcons li a img {
+        width: 100px;
+        height: 100px;
+        padding: 10%;
+    }
+}

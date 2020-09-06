@@ -6,7 +6,7 @@ const ShelInfos = (props) => {
     return(
         <div id='shelInfos'>
             <ul id='infos'>
-                <li id='shelType' className='resize'><span>Spécialisée dans :</span> {props.data.specializeAt && props.data.specializeAt.map((item) => { return `  ${item}`})}</li>
+                <li id='shelType' className='resize'><span>Spécialité(s) :</span> {props.data.specializeAt && props.data.specializeAt.map((item) => { return `  ${item}`})}</li>
                 <li id='shelAddress' className='resize'><span>Adresse :</span> {props.data.address}</li>
                 <li id='shelEmail' className='resize'><span>Email :</span> {props.data.email} </li>
                 <li id='shelPhone01'><span>Téléphone 01 :</span> {props.data.phone01}</li>

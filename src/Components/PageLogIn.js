@@ -2,24 +2,18 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 
 import Header from './Header';
-import FormShelter from './FormShelter';
-import HopeD from './HopeD';
+import LogInForm from './LogInForm';
 
-import '../css/PageAddShelter.css';
-
-class PageAddShelter extends React.Component {
+class PageLogin extends React.Component {
     render() {
         return(
-            <div id='addShelter'>
+            <div id='login'>
                 <Header adminPage={this.props.adminPage} redirectToHome={this.props.redirectToHome}/>
                 { this.props.toHome ? <Redirect push to='/'/> : null }
-                <div id='addShelterBody'>
-                    <FormShelter/>
-                    <HopeD/>
-                </div>
+                <LogInForm/>
             </div>
         );
     };
 };
 
-export default PageAddShelter;
+export default PageLogin;

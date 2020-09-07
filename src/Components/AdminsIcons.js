@@ -14,7 +14,7 @@ class AdminsIcons extends React.Component {
                 <li><a href='/admin/home'><img src={Home} alt='bouton Home'/>Accueil</a></li>
                 <li><a href='/admin/admins'><img src={Admins} alt='bouton Admins'/>Gestion Admins</a></li>
                 <li><a href='/admin/shelters'><img src={Shelters} alt='bouton Shelters'/>Gestion Refuges</a></li>
-                <li><a href='mailto:hopes.journey.contact@gmail.com'><img src={Logout} alt='bouton Logout'/>Déconnexion</a></li>
+                <li><a href='/admin/logout'><img src={Logout} alt='bouton Logout'/>Déconnexion</a></li>
             </ul>
         );
     };

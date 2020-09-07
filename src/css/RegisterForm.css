@@ -1,4 +1,4 @@
-#loginForm {
+#registerForm {
     width: 100%;
     height: 100%;
     display: flex;
@@ -7,7 +7,7 @@
     align-items: center;
 }
 
-#loginForm h2 {
+#registerForm h2 {
     font-family: 'Fredericka the Great', cursive;
     color: #ffffff;
     font-size: 40px;
@@ -15,7 +15,7 @@
     margin: 5px 20px;
 }
 
-#loginForm button {
+#registerForm button {
     width: 150px;
     height: 35px;
     background: #1D5664;
@@ -30,7 +30,7 @@
     margin: 10px 0;
 }
 
-#loginForm form {
+#registerForm form {
     width: 99%;
     height: 65%;
     display: flex;
@@ -40,7 +40,7 @@
     margin: 0 0 0 10px;
 }
 
-#loginForm form label {
+#registerForm form label {
     width: 100%;
     height: auto;
     display: flex;
@@ -53,7 +53,7 @@
     font-weight: normal;
 }
 
-#loginForm form input:not(.checkboxInput) {
+#registerForm form input:not(#checkboxInput) {
     width: 350px;
     height: 25px;
     background: #1D5664;
@@ -67,13 +67,13 @@
     font-weight: normal;
 }
 
-#loginForm span {
+#registerForm span {
     font-family: 'Oswald', sans-serif;
     color: #e2a99b;
 }
 
 @media screen and (max-width: 375px) {
-    #loginForm {
+    #registerForm {
         width: 100%;
         height: 100%;
         display: flex;
@@ -82,15 +82,16 @@
         align-items: center;
     }
     
-    #loginForm h2 {
+    #registerForm h2 {
         font-family: 'Fredericka the Great', cursive;
         color: #ffffff;
-        font-size: 40px;
+        font-size: 25px;
         font-weight: normal;
-        margin: 5px 20px;
+        text-align: center;
+        margin: 15px 20px;
     }
     
-    #loginForm button {
+    #registerForm button {
         width: 150px;
         height: 35px;
         background: #1D5664;
@@ -105,7 +106,7 @@
         margin: 10px 0;
     }
     
-    #loginForm form {
+    #registerForm form {
         width: 99%;
         height: 65%;
         display: flex;
@@ -115,7 +116,7 @@
         margin: 0 0 0 10px;
     }
     
-    #loginForm form label {
+    #registerForm form label {
         width: 100%;
         height: auto;
         display: flex;
@@ -128,8 +129,8 @@
         font-weight: normal;
     }
     
-    #loginForm form input:not(.checkboxInput) {
-        width: 300px;
+    #registerForm form input:not(#checkboxInput) {
+        width: 250px;
         height: 25px;
         background: #1D5664;
         border: 5px solid white;
@@ -142,7 +143,7 @@
         font-weight: normal;
     }
     
-    #loginForm span {
+    #registerForm span {
         font-family: 'Oswald', sans-serif;
         color: #e2a99b;
     }

@@ -5,8 +5,8 @@ import Accepted from '../img/accepted.png';
 import Edit from '../img/edit.png';
 import Bin from '../img/bin.png';
 
-import '../css/ListItem.css';
-import ListItemForm from './ListItemForm';
+import '../css/ListItemShelter.css';
+import ListItemForm from './ListItemShelterForm';
 import PopUpDelete from './PopUpDelete';
 
 class ListItem extends React.Component {
@@ -108,11 +108,19 @@ class ListItem extends React.Component {
 
     render() {
         const local = "http://localhost:3050/";
+        const url = 'http://localhost:3050/hj2shel/shelters';
 
         if(this.state.isEditing === false) {
             return(
                 <li className='listAdminShelters'>
-                {this.state.isDeleting ? <PopUpDelete name={this.props.item.name} id={this.props.dataId} Delete={this.isDelete} isDeleting={this.state.isDeleting} isDeleteOk={this.isDeleteOk}/> : null}
+                {this.state.isDeleting ? <PopUpDelete 
+                    name={this.props.item.name} 
+                    id={this.props.dataId} 
+                    Delete={this.isDelete} 
+                    isDeleting={this.state.isDeleting} 
+                    isDeleteOk={this.isDeleteOk}
+                    url={url}/> 
+                    : null}
                     <div className='itemHeader'>
                         <h3 className='itemTitle'>{this.props.item.name}</h3>
                         <div className='imgContainer'>
@@ -144,6 +152,7 @@ class ListItem extends React.Component {
                 isEditing={this.state.isEditing} 
                 isValidate={this.isValidate} 
                 isEdit={this.isEdit}
+                isDelete={this.isDelete}
             />
         };
     };

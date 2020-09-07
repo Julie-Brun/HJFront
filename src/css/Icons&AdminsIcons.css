@@ -43,11 +43,11 @@
 @media screen and (max-width: 768px) {
     .listIcons {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-evenly;
         align-items: center;
         flex-wrap: wrap;
         width: 300px;
-        height: 110px;
+        height: fit-content;
         padding: 0;
         margin: 0;
         list-style: none;
@@ -56,11 +56,15 @@
     }
     
     .listIcons li {
+        width: 140px;
+        height: 140px;
         transition: all 0.3s ease;
-        margin: 20px 0;
+        margin: 10px 5px;
     }
     
     .listIcons li a {
+        width: 100%;
+        height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -87,20 +91,24 @@
         align-items: center;
         flex-wrap: wrap;
         width: 300px;
-        height: 110px;
+        height: fit-content;
         padding: 0;
-        margin: 0;
+        margin: 0 0 10px 0;
         list-style: none;
         text-align: center;
         transition: all 0.3s ease;
     }
     
     .listIcons li {
+        width: 140px;
+        height: 140px;
         transition: all 0.3s ease;
-        margin: 20px 0;
+        margin: 10px 5px;
     }
     
     .listIcons li a {
+        width: 100%;
+        height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Header from './Header';
-import ListItem from './ListItem';
+import ListItemShelter from './ListItemShelter';
 
 import '../css/PageManageShelters.css';
 
@@ -60,7 +60,7 @@ class PageManageShelters extends React.Component {
                 <div id='manageSheltersBody'>
                     <h2>Gestion des Refuges</h2>
                     <ul className='listShelters'>
-                        {this.state.data.map((item) => <ListItem item={item} key={item._id} dataId={item._id} fetchData={this.fetchData}/>)}
+                        {this.state.data.map((item) => <ListItemShelter item={item} key={item._id} dataId={item._id} fetchData={this.fetchData}/>)}
                     </ul>
                 </div>
             </div>

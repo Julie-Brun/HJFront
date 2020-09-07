@@ -1,0 +1,321 @@
+.listAdminShelters {
+    width: 1040px;
+    height: 255px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background: #1D5664;
+    border: 5px solid white;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 0;
+}
+
+.listAdminShelters .itemHeader {
+    width: 975px;
+    height: 55px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+}
+
+.listAdminShelters .itemHeader .itemTitle {
+    font-family: 'Fredericka the Great', cursive;
+    color: #FFFFFF;
+    font-size: 36px;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+}
+
+.listAdminShelters .itemHeader .imgContainer {
+    width: 175px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+}
+
+.listAdminShelters .itemHeader .imgContainer img {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.listAdminShelters .itemBody {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.listAdminShelters .itemBody img {
+    width: 150px;
+    height: 150px;
+    border: 5px solid white;
+    border-radius: 10px;
+    margin: 0 0 25px 35px;
+}
+
+.listAdminShelters .itemBody .infos {
+    width: 330px;
+    height: fit-content;
+    list-style: none;
+    font-family: 'Oswald', serif;
+    color: #FFFFFF;
+    font-size: 16px;
+    padding: 0;
+    margin: 15px 15px 30px 15px;
+}
+
+.listAdminShelters .itemBody .infos li {
+    width: 330px;
+    height: fit-content;
+    overflow-wrap: break-word;
+    flex-wrap: wrap;
+    margin: 5px 0;
+}
+
+.listAdminShelters .itemBody .infos li span {
+    font-family: 'Fredericka the Great', cursive;
+    color: #FFFFFF;
+    font-size: 18px;
+    padding: 0;
+    text-decoration: underline;
+}
+
+.listAdminShelters .itemBody .description {
+    width: 50%;
+    height: 80%;
+    border: 2px solid white;
+    border-radius: 10px;
+    font-family: 'Oswald', serif;
+    color: #FFFFFF;
+    font-size: 16px;
+    margin: 10px;
+    padding: 10px;
+    text-align: justify;
+    overflow-y: auto;
+}
+
+@media screen and (max-width: 768px) {
+    .listAdminShelters {
+        width: 90%;
+        height: 255px;
+        min-height: 455px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        background: #1D5664;
+        border: 5px solid white;
+        border-radius: 10px;
+        margin: 10px;
+        padding: 10px;
+    }
+    
+    .listAdminShelters .itemHeader {
+        width: 100%;
+        height: 55px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0;
+    }
+    
+    .listAdminShelters .itemHeader .itemTitle {
+        font-family: 'Fredericka the Great', cursive;
+        color: #FFFFFF;
+        font-size: 36px;
+        font-weight: normal;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .listAdminShelters .itemHeader .imgContainer {
+        width: 175px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 5px;
+    }
+    
+    .listAdminShelters .itemHeader .imgContainer img {
+        width: 50px;
+        height: 50px;
+        margin: 5px;
+        cursor: pointer;
+    }
+    
+    .listAdminShelters .itemBody {
+        width: 100%;
+        height: 400px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    
+    .listAdminShelters .itemBody img {
+        width: 150px;
+        height: 150px;
+        border: 5px solid white;
+        border-radius: 10px;
+        margin: 0;
+    }
+    
+    .listAdminShelters .itemBody .infos {
+        width: 330px;
+        height: fit-content;
+        list-style: none;
+        font-family: 'Oswald', serif;
+        color: #FFFFFF;
+        font-size: 16px;
+        padding: 0;
+        margin: 15px 15px 30px 15px;
+    }
+    
+    .listAdminShelters .itemBody .infos li {
+        width: 330px;
+        height: fit-content;
+        overflow-wrap: break-word;
+        flex-wrap: wrap;
+        margin: 5px 0;
+    }
+    
+    .listAdminShelters .itemBody .infos li span {
+        font-family: 'Fredericka the Great', cursive;
+        color: #FFFFFF;
+        font-size: 18px;
+        padding: 0;
+        text-decoration: underline;
+    }
+    
+    .listAdminShelters .itemBody .description {
+        width: 100%;
+        height: 25%;
+        border: 2px solid white;
+        border-radius: 10px;
+        font-family: 'Oswald', serif;
+        color: #FFFFFF;
+        font-size: 16px;
+        margin: 0;
+        padding: 10px;
+        text-align: justify;
+        overflow-y: auto;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .listAdminShelters {
+        width: 90%;
+        height: 255px;
+        min-height: 550px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        background: #1D5664;
+        border: 5px solid white;
+        border-radius: 10px;
+        margin: 10px;
+        padding: 5px;
+    }
+    
+    .listAdminShelters .itemHeader {
+        width: 100%;
+        height: 55px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0;
+    }
+    
+    .listAdminShelters .itemHeader .itemTitle {
+        font-family: 'Fredericka the Great', cursive;
+        color: #FFFFFF;
+        font-size: 25px;
+        font-weight: normal;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .listAdminShelters .itemHeader .imgContainer {
+        width: 40%;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 5px;
+    }
+    
+    .listAdminShelters .itemHeader .imgContainer img {
+        width: 40px;
+        height: 40px;
+        margin: 5px;
+        cursor: pointer;
+    }
+    
+    .listAdminShelters .itemBody {
+        width: 100%;
+        height: 495px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .listAdminShelters .itemBody img {
+        width: 100px;
+        height: 100px;
+        border: 5px solid white;
+        border-radius: 10px;
+        margin: 0;
+    }
+    
+    .listAdminShelters .itemBody .infos {
+        width: 95%;
+        height: fit-content;
+        list-style: none;
+        font-family: 'Oswald', serif;
+        color: #FFFFFF;
+        font-size: 16px;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .listAdminShelters .itemBody .infos li {
+        width: 330px;
+        height: fit-content;
+        overflow-wrap: break-word;
+        flex-wrap: wrap;
+        margin: 5px 0;
+    }
+    
+    .listAdminShelters .itemBody .infos li span {
+        font-family: 'Fredericka the Great', cursive;
+        color: #FFFFFF;
+        font-size: 18px;
+        padding: 0;
+        text-decoration: underline;
+    }
+    
+    .listAdminShelters .itemBody .description {
+        width: 80%;
+        height: 30%;
+        border: 2px solid white;
+        border-radius: 10px;
+        font-family: 'Oswald', serif;
+        color: #FFFFFF;
+        font-size: 16px;
+        margin: 10px;
+        padding: 10px;
+        text-align: justify;
+        overflow-y: auto;
+    }
+}

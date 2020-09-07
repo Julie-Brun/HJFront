@@ -9,7 +9,7 @@ import Accepted from '../img/accepted.png';
 import Edit from '../img/edit.png';
 import Bin from '../img/bin.png';
 
-import '../css/ListItemForm.css';
+import '../css/ListItemShelterForm.css';
 
 const ListItemForm = (props) => {
 
@@ -44,7 +44,6 @@ const ListItemForm = (props) => {
     const [isLoading, setIsLoading] = useState(false);
     const [isData, setIsData] = useState('');
     const [isError, setIsError] = useState('');
-    const [isEditing, setIsEditing] = useState(props.isEditing)
     
     const onSubmit = (data) => {
         console.log(data);
@@ -86,10 +85,8 @@ const ListItemForm = (props) => {
                 console.log(result);
                 setIsLoading(true);
                 setIsData(result); 
-                setIsEditing(false);
                 isEditOk();
                 console.log("Load:", isLoading, "Data:", isData);
-                console.log(isEditing);
             },
             (error) => {
                 setIsLoading(true);
@@ -106,10 +103,12 @@ const ListItemForm = (props) => {
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className='itemHeaderEdit'>
                     <input type='text' className='nameEdit' name='name' ref={register}/>
+                    <ErrorMessage as='span' errors={errors} name='name'/>
+
                     <div className='imgContainerEdit'>
                         <img src={props.isValid ? Accepted : Accept} alt='Icône Accept' onClick={props.isValidate}/>
                         <img src={Edit} alt='Icône Edit' onClick={props.isEdit}/>
-                        <img src={Bin} alt='Icône Bin'/>
+                        <img src={Bin} alt='Icône Bin' onClick={props.isDelete}/>
                     </div>
                 </div>
                 <div className='itemBodyEdit'>

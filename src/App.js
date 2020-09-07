@@ -10,6 +10,7 @@ import PageAddShelter from './Components/PageAddShelter';
 import PageLogIn from './Components/PageLogIn';
 import PageHomeAdmins from './Components/PageHomeAdmins';
 import PageManageAdmins from './Components/PageManageAdmins';
+import PageRegister from './Components/PageRegister';
 import PageManageShelters from './Components/PageManageShelters';
 import PageLogOut from './Components/PageLogOut';
 
@@ -49,6 +50,7 @@ class App extends React.Component {
             <Route exact path="/admin/login" render={(props) => <PageLogIn {...props} toHome={this.state.toHome} redirectToHome={this.redirectToHome}/>}/>
             <ProtectedRoute exact path="/admin/home" component={PageHomeAdmins} isLoggedIn={this.state.isLoggedIn}/>
             <ProtectedRoute exact path="/admin/admins" component={PageManageAdmins} isLoggedIn={this.state.isLoggedIn}/>
+            <ProtectedRoute exact path="/admin/admins/register" component={PageRegister} isLoggedIn={this.state.isLoggedIn}/>
             <ProtectedRoute exact path="/admin/shelters" component={PageManageShelters} isLoggedIn={this.state.isLoggedIn}/>
             <ProtectedRoute exact path="/admin/logout" component={PageLogOut} isLoggedIn={this.state.isLoggedIn}/>
           </Switch>

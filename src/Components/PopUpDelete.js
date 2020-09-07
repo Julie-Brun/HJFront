@@ -13,11 +13,10 @@ const PopUpDelete = (props) => {
     };
 
     const deleteShelter = () => {
-        const url = 'http://localhost:3050/hj2shel/shelters';
         const token = localStorage.getItem('token');
         const itemId = props.id;
                     
-        fetch(url, {
+        fetch(props.url, {
             method: 'DELETE',
             body: JSON.stringify({
                 id: itemId
